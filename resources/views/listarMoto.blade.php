@@ -70,6 +70,7 @@
             
              
                 @foreach ($Moto as $cus)
+              
                 <tr>
                     <td>{{$cus['modelo']}}</td>
                     <td>{{$cus['marca']}}</td>
@@ -77,8 +78,13 @@
                     <td>{{$cus['cor']}}</td>
                     <td>{{$cus['valor']}}</td>
                     <td>
-                        <a href="home"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                        <a href="/editar/{{$cus->id}}"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
+
+                        <form action="/editar/{{$cus->id}}" method="post" class="botao1">
+                            @csrf
+                            @method('DELETE')
                         <a href="#"><button><i class="fa-solid fa-trash"></i></button></a>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

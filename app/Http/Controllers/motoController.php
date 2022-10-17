@@ -37,4 +37,21 @@ class motoController extends Controller
         return view('listarMoto',['Moto'=>$data]);
     }
 
+    public function edit($id){
+  
+        $Moto = Moto::findOrFail($id);
+        return view('edit', ['Moto' => $Moto]);
+
+    }
+
+    public function update(Request $request){
+        Moto::findOrFail($request->id)->update($request->all());
+        return Redirect::route('listarMoto');
+    }
+
+    public function destroy($id){
+        Moto::findOrFail($id)->delete();
+        return Redirect::route('listarMoto');
+    }
+
 }

@@ -47,6 +47,7 @@ footer{
     border-top:  3px solid var(--primary);
 }
 
+
 footer span{
     color: var(--primary);
 }
@@ -104,7 +105,7 @@ nav{
 }
 
 .navbar-brand:hover{
-    transform: scale(1.1);
+  
     transition: .1s;
     color: var(--primary);
 }
@@ -392,6 +393,7 @@ table {
     background-color: var(--dark);
     color: #e6e7e8;
     font-size: 15px;
+    
 }
 
 th,
@@ -402,6 +404,7 @@ td {
     text-align: center;
     font-weight: 600;
     transition: .1s;
+    
 }
 
 td img {
@@ -432,6 +435,9 @@ td button {
     background-color: black;
     color: #e6e7e8;
     transition: .1s;
+    margin: 1px;
+    
+   
 
 }
 

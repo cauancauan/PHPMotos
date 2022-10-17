@@ -17,12 +17,18 @@ use App\Http\Controllers\motoController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
 
-
+Route::get('/',[HomeController::class, 'mostrar'])->name('home');
 Route::get('/home',[HomeController::class, 'mostrar'])->name('home');
-Route::get('/cadastrarMoto',[MotoController::class, 'FormularioCadastro']);
-Route::get('/listarMoto',[MotoController::class, 'mostrarLista']);
+Route::get('/cadastrarMoto',[MotoController::class, 'FormularioCadastro'])->name('cadastrarMoto');
+Route::get('/listarMoto',[MotoController::class, 'mostrarLista'])->name('listarMoto');
 Route::post('/cadastrarMoto', [MotoController::class, 'SalvarBanco'])->name('salvar-banco');
+
+Route::get('/editar/{id}',[motoController::class, 'edit']);
+
+Route::delete('/editar/{id}',[motoController::class, 'destroy']);
+
+Route::put('/editar/{id}', [motoController::class, 'update']);
